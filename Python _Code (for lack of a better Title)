@@ -1,0 +1,45 @@
+#Python Code (for lack of a better title)
+# Simplified Alarm Clock. No Tkinter
+#Goal: create a simplified alarm clock. 
+print("Hello World. Time to Create an Alarm Clock.")
+print("Simplified Alarm Clock. No Tkinter.")
+from datetime import datetime
+import_current_time = datetime.now()
+from datetime import date
+current_date = date.today()
+current_time = import_current_time.strftime("%H:%M:%S")
+print("First let's get today's date and the present time.")
+print("Today's date is ", current_date , ". Likewise, the present time is ", current_time , ".")
+import time
+#
+holder = time.localtime()
+current_local_time = time.strftime("%H:%M:%S",holder)
+print("Current Local Time =", current_local_time)
+
+from datetime import datetime
+import_current_time = datetime.now()
+#Print the request for user input for Alarm clock
+print("Alarm Clock Time Input. Set the Alarm Clock Time")
+
+while True:
+#    alarm_time_input = input("Enter time in 'HH:MM:SS AM/PM' format: ")
+    alarm_time_input = input("Enter time in 'HH:MM:SS' format: ")
+    print(f"Setting alarm for {alarm_time_input}...")
+    break
+#
+alarm_input_hour = alarm_time_input[0:2]
+alarm_input_min = alarm_time_input[3:5]
+alarm_input_sec = alarm_time_input[6:8]
+alarm_input_period = alarm_time_input[9:].upper()
+#
+while True:
+    now = datetime.now()
+    current_hour = now.strftime("%I")
+    current_min = now.strftime("%M")
+    current_sec = now.strftime("%S")
+
+    if alarm_input_hour == current_hour:
+        if alarm_input_min == current_min:
+            if alarm_input_sec == current_sec:
+                print("Wake Up!")
+                break
